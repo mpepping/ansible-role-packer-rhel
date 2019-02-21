@@ -1,4 +1,4 @@
-# Ansible Role: Packer RHEL/CentOS Configuration for Vagrant VirtualBox
+# Ansible Role: Packer RHEL/CentOS Configuration for Vagrant on VMware Fusion
 
 [![Build Status](https://travis-ci.org/geerlingguy/ansible-role-packer-rhel.svg?branch=master)](https://travis-ci.org/geerlingguy/ansible-role-packer-rhel)
 
