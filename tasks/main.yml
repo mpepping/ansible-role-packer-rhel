@@ -53,7 +53,7 @@
 
 - name: Get Vagrant's public key.
   get_url:
-    url: https://github.com/mitchellh/vagrant/raw/master/keys/vagrant.pub
+    url: https://raw.githubusercontent.com/hashicorp/vagrant/master/keys/vagrant.pub
     dest: /home/vagrant/.ssh/authorized_keys
     owner: vagrant
     group: vagrant
