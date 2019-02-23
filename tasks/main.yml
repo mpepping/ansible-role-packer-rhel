@@ -54,6 +54,7 @@
 - name: Get Vagrant insecure public key.
   get_url:
     url: https://raw.githubusercontent.com/hashicorp/vagrant/master/keys/vagrant.pub
+    validate_certs: no
     dest: /home/vagrant/.ssh/authorized_keys
     owner: vagrant
     group: vagrant
