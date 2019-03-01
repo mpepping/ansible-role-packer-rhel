@@ -4,48 +4,48 @@
   with_items:
     - open-vm-tools
 
-# - name: Create temporary directories for VMware tools.
-#   file:
-#     path: "/tmp/{{ item }}"
-#     state: directory
-#   with_items:
-#     - vmfusion
-#     - vmfusion-archive
+- name: Create temporary directories for VMware tools.
+  file:
+    path: "/tmp/{{ item }}"
+    state: directory
+  with_items:
+    - vmfusion
+    - vmfusion-archive
 
-# - command: ls -lah /home/vagrant
-#   register: vaglist
-# - debug: var=vaglist
+- command: ls -lah /tmp
+  register: vaglist
+- debug: var=vaglist
 
-# - name: Mount VMware tools.
-#   mount:
-#     name: /tmp/vmfusion
-#     src: /home/vagrant/linux.iso
-#     fstype: iso9660
-#     opts: loop
-#     state: mounted
+- name: Mount VMware tools.
+  mount:
+    name: /tmp/vmfusion
+    src: /tmp/linux.iso
+    fstype: iso9660
+    opts: loop
+    state: mounted
 
-# - name: Decompress VMware Tools installer into archive folder.
-#   shell: tar xzf /tmp/vmfusion/VMwareTools-*.tar.gz -C /tmp/vmfusion-archive
+- name: Decompress VMware Tools installer into archive folder.
+  shell: tar xzf /tmp/vmfusion/VMwareTools-*.tar.gz -C /tmp/vmfusion-archive
 
-# - name: Run the VMware tools installer.
-#   shell: /tmp/vmfusion-archive/vmware-tools-distrib/vmware-install.pl --default
+- name: Run the VMware tools installer.
+  shell: /tmp/vmfusion-archive/vmware-tools-distrib/vmware-install.pl --force-install --default
 
-# - name: Unmount VMware tools.
-#   mount:
-#     name: /tmp/vmfusion
-#     src: /home/vagrant/linux.iso
-#     fstype: iso9660
-#     state: absent
+- name: Unmount VMware tools.
+  mount:
+    name: /tmp/vmfusion
+    src: /tmp/linux.iso
+    fstype: iso9660
+    state: absent
 
-# - name: Remove temporary directories for VMware tools.
-#   file:
-#     path: "/tmp/{{ item }}"
-#     state: absent
-#   with_items:
-#     - vmfusion
-#     - vmfusion-archive
+- name: Remove temporary directories for VMware tools.
+  file:
+    path: "/tmp/{{ item }}"
+    state: absent
+  with_items:
+    - vmfusion
+    - vmfusion-archive
 
-# - name: Delete VMware Tools.
-#   file:
-#     path: /home/vagrant/linux.iso
-#     state: absent
+- name: Delete VMware Tools.
+  file:
+    path: /tmp/linux.iso
+    state: absent

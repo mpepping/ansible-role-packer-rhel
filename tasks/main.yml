@@ -28,8 +28,8 @@
     line: 'RES_OPTIONS="single-request-reopen"'
     state: present
 
-# - name: Restart network service (explicitly).
-#   service: name=network state=restarted
+- name: Restart network service (explicitly).
+  service: name=network state=restarted
 
 # SSH daemon configuration.
 - name: Configure SSH daemon.
