@@ -3,7 +3,7 @@ dependencies: []
 
 galaxy_info:
   author: mpepping
-  description: RedHat/CentOS configuration for Packer.
+  description: RedHat/CentOS configuration for Packer (fork of geerlingguy/ansible-role-packer-rhel).
   company: "AUTOMIQ"
   license: "license (BSD, MIT)"
   min_ansible_version: 2.4
