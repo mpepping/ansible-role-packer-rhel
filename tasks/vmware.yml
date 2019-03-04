@@ -13,8 +13,8 @@
     - vmfusion-archive
 
 - command: ls -lah /tmp
-  register: vaglist
-- debug: var=vaglist
+  register: tmplist
+- debug: var=tmplist
 
 - name: Mount VMware tools.
   mount:
